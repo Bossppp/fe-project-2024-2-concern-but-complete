@@ -1,30 +1,30 @@
 export interface Address {
     building_number: string;
-    street: string;
-    district: string;
+    street?: string;
+    district?: string;
     province: string;
     postal_code: string;
 }
 
 export interface Hotel {
-    id?: string;
+    id: string;
     name: string;
     address: Address;
     tel: string;
-    image: string;
+    image?: string;
 }
 
 export interface User {
-    id?: string;
+    id: string;
     name: string;
-    tel_number: string;
+    tel: string;
     email: string;
-    password?: string;
+    password: string;
     role: 'user' | 'admin';
 }
 
 export interface Booking {
-    id?: string;
+    id: string;
     start_date: string;
     end_date: string;
     hotel: Hotel;
