@@ -1,7 +1,16 @@
+'use client'
 import { Calendar, UserRoundCog } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function Dashboard() {
+  const router = useRouter(); 
+  
+    const handleClick = (buttonLabel: string, route: string) => {
+      alert(`You clicked on: ${buttonLabel}`);
+      router.push(route); 
+    };
+    
   return (
     <div className="flex flex-col p-8 mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-sky-800">Dashboard</h1>
@@ -30,7 +39,10 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <button className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2">
+          <button
+            className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2"
+            onClick={() => handleClick("edit Profile", "/user/profile")}
+          >
             <UserRoundCog />
             <span>Edit Profile</span>
           </button>
@@ -50,7 +62,10 @@ function Dashboard() {
               <p className="text-sm text-slate-500">Total bookings in system</p>
             </div>
           </div>
-          <button className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2">
+          <button
+            className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2"
+            onClick={() => handleClick("manage booking", "/user/bookings")}
+          >
             <Calendar />
             <span>Manage Bookings</span>
           </button>

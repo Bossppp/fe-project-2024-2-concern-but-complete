@@ -1,11 +1,16 @@
 'use client'
 import Image from 'next/image';
 import { Calendar, House, LogOut, SquareUser } from "lucide-react";
-import React from 'react'
+import React from 'react';
+import { useRouter } from 'next/navigation'; 
 import NavigateBtn from './NavigateBtn';
+
 function UserNavigate() {
-  const handleClick = (buttonLabel: string) => {
+  const router = useRouter(); 
+
+  const handleClick = (buttonLabel: string, route: string) => {
     alert(`You clicked on: ${buttonLabel}`);
+    router.push(route); 
   };
 
   return (
@@ -22,30 +27,34 @@ function UserNavigate() {
       <div className="mt-2 justify-start text-sky-800 text-3xl font-semibold mb-10">
         Name of User
       </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
+        {/* Dashboard Button - Navigates to /user */}
         <NavigateBtn
           icon={<House className="w-5 mr-4" />}
           label="Dashboard"
-          onClick={() => handleClick("Dashboard")}
+          onClick={() => handleClick("Dashboard", "/user")}
         />
+        {/* Profile Button - Navigates to /user/profile */}
         <NavigateBtn
           icon={<SquareUser className="w-5 mr-4" />}
           label="Profile Settings"
-          onClick={() => handleClick("Profile")}
+          onClick={() => handleClick("Profile", "/user/profile")}
         />
+        {/* Manage Bookings Button */}
         <NavigateBtn
           icon={<Calendar className="w-5 mr-4" />}
           label="Manage Bookings"
-          onClick={() => handleClick("booking")}
+          onClick={() => handleClick("Manage Bookings", "/user/bookings")}
         />
+        {/* Log Out Button - Navigates to the main page */}
         <NavigateBtn
           icon={<LogOut className="w-5 mr-4" />}
           label="Log Out"
-          onClick={() => handleClick("log out")}
+          onClick={() => handleClick("Log Out", "/")} // Navigates to main/home page
         />
       </div>
     </div>
   );
 }
 
-export default UserNavigate
+export default UserNavigate;

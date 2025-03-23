@@ -8,8 +8,6 @@ function user() {
       <UserNavigate />
       <div className=" p-2 w-2/3">
         <Dashboard />
-        <Dashboard />{/**mock*/}
-        <Dashboard />{/**mock*/}
       </div>
     </div>
   );
