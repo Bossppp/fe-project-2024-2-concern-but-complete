@@ -1,15 +1,15 @@
-'use client'
-import React from 'react'
-import { Hotel } from '../../interface'
-import { useRouter } from 'next/navigation'
-import { MapPin, Calendar } from 'lucide-react'
+"use client";
+import React from "react";
+import { Hotel } from "../../interface";
+import { useRouter } from "next/navigation";
+import { MapPin, Calendar } from "lucide-react";
 
-function HotelCard({hotel}:{hotel:Hotel}) {
-    const router = useRouter()
+function HotelCard({ hotel }: { hotel: Hotel }) {
+  const router = useRouter();
 
-    const handleClick = () => {
-        router.push(`/hotel/${hotel.id}`)
-    }
+  const handleClick = () => {
+    router.push(`/hotel/${hotel.id}`);
+  };
   return (
     <div className="max-w-sm w-full bg-white text-black rounded-lg shadow-md overflow-hidden">
       <div className="relative h-52 bg-gray-600">
@@ -31,8 +31,7 @@ function HotelCard({hotel}:{hotel:Hotel}) {
         </div>
       </div>
     </div>
-    
-  )
+  );
 }
 
-export default HotelCard
+export default HotelCard;

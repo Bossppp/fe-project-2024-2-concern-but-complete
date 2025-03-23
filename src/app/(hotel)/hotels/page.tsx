@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function HotelsPage() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div></div>;
 }
 
-export default HotelsPage
+export default HotelsPage;
