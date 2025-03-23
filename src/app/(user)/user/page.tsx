@@ -6,7 +6,7 @@ function user() {
   return (
     <div className="flex bg-white">
       <UserNavigate />
-    <div className=" p-2 w-2/3">
+      <div className=" p-2 w-2/3">
         <Dashboard />
         <Dashboard />{/**mock*/}
         <Dashboard />{/**mock*/}

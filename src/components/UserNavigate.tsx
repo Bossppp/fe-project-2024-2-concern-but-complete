@@ -1,8 +1,13 @@
+'use client'
 import Image from 'next/image';
 import { Calendar, House, LogOut, SquareUser } from "lucide-react";
 import React from 'react'
-
+import NavigateBtn from './NavigateBtn';
 function UserNavigate() {
+  const handleClick = (buttonLabel: string) => {
+    alert(`You clicked on: ${buttonLabel}`);
+  };
+
   return (
     <div className="w-1/4 h-[515px] relative flex flex-col items-center m-6">
       <div className="w-44 h-44 overflow-hidden rounded-full">
@@ -17,22 +22,28 @@ function UserNavigate() {
       <div className="mt-2 justify-start text-sky-800 text-3xl font-semibold mb-10">
         Name of User
       </div>
-      <button className="w-64 h-16 bg-white hover:bg-sky-800 text-sky-800 hover:text-white border-1 border-slate-400 flex items-center justify-start pl-7">
-        <House className="w-5 mr-4" />
-        <span className="text-xl font-semibold">Dashboard</span>
-      </button>
-      <button className="w-64 h-16 bg-white hover:bg-sky-800 text-sky-800 hover:text-white border-1 border-slate-400 flex items-center justify-start pl-7">
-        <SquareUser className="w-5 mr-4" />
-        <span className="text-xl font-semibold">Profile Settings</span>
-      </button>
-      <button className="w-64 h-16 bg-white hover:bg-sky-800 text-sky-800 hover:text-white border-1 border-slate-400 flex items-center justify-start pl-7">
-        <Calendar className="w-5 mr-4" />
-        <span className="text-xl font-semibold">Manage Bookings</span>
-      </button>
-      <button className="w-64 h-16 bg-white hover:bg-sky-800 text-sky-800 hover:text-white border-1 border-slate-400 flex items-center justify-start pl-7">
-        <LogOut className="w-5 mr-4" />
-        <span className="text-xl font-semibold">Log Out</span>
-      </button>
+      <div className="flex flex-col ">
+        <NavigateBtn
+          icon={<House className="w-5 mr-4" />}
+          label="Dashboard"
+          onClick={() => handleClick("Dashboard")}
+        />
+        <NavigateBtn
+          icon={<SquareUser className="w-5 mr-4" />}
+          label="Profile Settings"
+          onClick={() => handleClick("Profile")}
+        />
+        <NavigateBtn
+          icon={<Calendar className="w-5 mr-4" />}
+          label="Manage Bookings"
+          onClick={() => handleClick("booking")}
+        />
+        <NavigateBtn
+          icon={<LogOut className="w-5 mr-4" />}
+          label="Log Out"
+          onClick={() => handleClick("log out")}
+        />
+      </div>
     </div>
   );
 }
