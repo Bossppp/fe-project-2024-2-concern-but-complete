@@ -37,7 +37,7 @@ function AdminDashboard() {
             </div>
             <button
               className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2"
-              onClick={() => handleClick("manage booking", "/user/bookings")}
+              onClick={() => handleClick("manage hotel", "/admin/hotels")}
             >
               <span>Manage Hotels</span>
               <ArrowRight />
