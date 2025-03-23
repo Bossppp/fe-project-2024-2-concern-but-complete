@@ -66,10 +66,7 @@ export default function HotelsPage() {
         box-border
       "
     >
-      {/* Search Bar ด้านบน */}
       <SearchBarHotelsPage />
-
-      {/* Grid แสดงการ์ด */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4">
         {hotels.map((hotel) => (
           <HotelCard key={hotel.id} hotel={hotel} />
