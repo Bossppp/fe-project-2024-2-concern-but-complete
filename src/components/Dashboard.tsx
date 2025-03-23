@@ -8,7 +8,7 @@ function Dashboard() {
 
       <div className="flex gap-6">
         {/* Profile Card */}
-        <div className="bg-white flex-1 h-70 p-6 rounded-lg shadow flex flex-col justify-between">
+        <div className="bg-white flex-1 h-70 p-6 rounded-lg shadow-[0_0_3px_0_rgba(0,0,0,0.2)] flex flex-col justify-between">
           <div>
             <h2 className="text-xl font-semibold mb-4 text-sky-800">Profile</h2>
             <div className="space-y-2 text-slate-700">
@@ -37,7 +37,7 @@ function Dashboard() {
         </div>
 
         {/* Bookings Card */}
-        <div className="bg-white flex-1 h-70 p-6 rounded-lg shadow flex flex-col justify-between">
+        <div className="bg-white flex-1 h-70 p-6 rounded-lg shadow-[0_0_3px_0_rgba(0,0,0,0.2)] flex flex-col justify-between">
           <div>
             <h2 className="text-xl font-semibold mb-4 text-sky-800">
               Bookings
