@@ -6,10 +6,10 @@ import React from "react";
 function AdminDashboard() {
     const router = useRouter(); 
     
-        const handleClick = (buttonLabel: string, route: string) => {
-            alert(`You clicked on: ${buttonLabel}`);
-            router.push(route); 
-        };
+    const handleClick = (buttonLabel: string, route: string) => {
+        alert(`You clicked on: ${buttonLabel}`);
+        router.push(route); 
+    };
         
     return (
       <div className="min-h-screen bg-white flex flex-col p-8 mx-auto ">
@@ -63,7 +63,7 @@ function AdminDashboard() {
             </div>
             <button
               className="w-full px-4 py-2 bg-sky-800 text-white rounded hover:bg-sky-700 flex items-center justify-center gap-2"
-              onClick={() => handleClick("manage booking", "/user/bookings")}
+              onClick={() => handleClick("manage booking", "/admin/bookings")}
             >
               <span>Manage Bookings</span>
               <ArrowRight />
