@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import BookingCard from "./BookingCard";
+import { useRouter } from "next/navigation";
 
 interface Booking {
     id: string;
@@ -14,36 +15,39 @@ function ManageBookings() {
     const [bookings, setBookings] = useState<Booking[]>([
         {
             id: "1",
-            hotelName: "Chabatai Hotel",
+            hotelName: "Chabatai Hotel1",
             checkIn: "10/09/2024",
             checkOut: "12/09/2024",
             location: "Bangkok, Thailand",
         },
         {
             id: "2",
-            hotelName: "Chabatai Hotel",
+            hotelName: "Chabatai Hotel2",
             checkIn: "10/09/2024",
             checkOut: "12/09/2024",
             location: "Bangkok, Thailand",
         },
         {
             id: "3",
-            hotelName: "Chabatai Hotel",
+            hotelName: "Chabatai Hotel3",
             checkIn: "10/09/2024",
             checkOut: "12/09/2024",
             location: "Bangkok, Thailand",
         },
         {
             id: "4",
-            hotelName: "Chabatai Hotel",
+            hotelName: "Chabatai Hotel4",
             checkIn: "10/09/2024",
             checkOut: "12/09/2024",
             location: "Bangkok, Thailand",
         },
     ]);
 
+    const router = useRouter();
+
     const handleViewDetails = (id: string) => {
         alert(`Viewing details for booking with ID: ${id}`);
+        router.push(`/user/bookings/${id}`);
     };
 
     const handleCancel = (id: string) => {
